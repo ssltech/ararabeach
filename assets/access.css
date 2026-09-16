@@ -1,0 +1,188 @@
+.access-locked {
+  overflow: hidden;
+}
+
+.access-gate {
+  position: fixed;
+  z-index: 9999;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  min-height: 100svh;
+  padding: 24px;
+  overflow-y: auto;
+  background:
+    linear-gradient(135deg, rgba(0, 22, 51, .93), rgba(0, 41, 75, .82)),
+    url("arara-beach-hero.png") center / cover no-repeat;
+  transition: opacity .35s ease, visibility .35s ease;
+}
+
+.access-gate::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at 15% 15%, rgba(82, 191, 227, .18), transparent 32rem),
+    radial-gradient(circle at 85% 85%, rgba(255, 214, 51, .14), transparent 28rem);
+  pointer-events: none;
+}
+
+.access-unlocked .access-gate {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.access-card {
+  position: relative;
+  width: min(100%, 470px);
+  padding: 38px;
+  border: 1px solid rgba(82, 191, 227, .3);
+  border-radius: 22px;
+  background: rgba(0, 17, 42, .88);
+  box-shadow: 0 35px 90px rgba(0, 0, 0, .45);
+  backdrop-filter: blur(18px);
+  text-align: center;
+}
+
+.access-logo {
+  display: block;
+  width: 132px;
+  height: auto;
+  margin: 0 auto 22px;
+  border-radius: 6px;
+}
+
+.access-kicker {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--brand-yellow);
+  font-size: .75rem;
+  font-weight: 700;
+  letter-spacing: .13em;
+  text-transform: uppercase;
+}
+
+.access-card h1 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(1.75rem, 5vw, 2.35rem);
+  line-height: 1.08;
+}
+
+.access-card > p {
+  max-width: 38ch;
+  margin: 16px auto 24px;
+  color: rgba(255, 255, 255, .72);
+  line-height: 1.55;
+}
+
+.access-form {
+  text-align: left;
+}
+
+.access-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: #fff;
+  font-size: .86rem;
+  font-weight: 700;
+}
+
+.access-field {
+  position: relative;
+}
+
+.access-field input {
+  width: 100%;
+  min-height: 54px;
+  padding: 0 82px 0 16px;
+  border: 1px solid rgba(255, 255, 255, .24);
+  border-radius: 12px;
+  outline: none;
+  background: rgba(255, 255, 255, .08);
+  color: #fff;
+  font: inherit;
+  transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.access-field input:focus {
+  border-color: var(--brand-blue);
+  box-shadow: 0 0 0 4px rgba(82, 191, 227, .14);
+}
+
+.access-field input::placeholder {
+  color: rgba(255, 255, 255, .46);
+}
+
+.password-toggle {
+  position: absolute;
+  top: 50%;
+  right: 14px;
+  transform: translateY(-50%);
+  border: 0;
+  background: transparent;
+  color: var(--brand-blue);
+  font: inherit;
+  font-size: .78rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.access-error {
+  min-height: 20px;
+  margin: 7px 2px 5px;
+  color: #ff9a91;
+  font-size: .8rem;
+}
+
+.access-submit {
+  width: 100%;
+  min-height: 54px;
+  border: 0;
+  border-radius: 12px;
+  background: var(--brand-yellow);
+  color: var(--brand-navy);
+  font: inherit;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.access-submit:hover {
+  filter: brightness(1.04);
+  transform: translateY(-2px);
+}
+
+.access-submit:disabled {
+  cursor: wait;
+  opacity: .72;
+}
+
+.access-card small {
+  display: block;
+  margin-top: 18px;
+  color: rgba(255, 255, 255, .48);
+}
+
+.access-field.shake {
+  animation: access-shake .35s ease;
+}
+
+@keyframes access-shake {
+  25% { transform: translateX(-6px); }
+  50% { transform: translateX(6px); }
+  75% { transform: translateX(-3px); }
+}
+
+@media (max-width: 520px) {
+  .access-gate { padding: 14px; }
+  .access-card { padding: 28px 20px; border-radius: 18px; }
+  .access-logo { width: 110px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .access-gate,
+  .access-submit { transition: none; }
+  .access-field.shake { animation: none; }
+}
