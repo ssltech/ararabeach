@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#123c2b">
   <meta name="description" content="Arara Beach — natureza, sabores e diversão na Estrada de Novo Airão, KM 7, Amazonas.">
+  <meta name="robots" content="noindex, nofollow, noarchive">
   <title>Arara Beach | Natureza, sabores e diversão</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +14,28 @@
   <link rel="stylesheet" href="assets/styles.css">
   <link rel="stylesheet" href="assets/logo.css">
   <link rel="stylesheet" href="assets/theme.css">
+  <link rel="stylesheet" href="assets/access.css">
 </head>
-<body>
+<body class="access-locked">
+  <section class="access-gate" id="accessGate" aria-labelledby="accessTitle">
+    <div class="access-card">
+      <img class="access-logo" src="assets/arara-beach-logo.png" alt="Arara Beach">
+      <span class="access-kicker">Demonstração exclusiva</span>
+      <h1 id="accessTitle">Acesse o projeto em desenvolvimento</h1>
+      <p>Digite a senha fornecida pela SSLTech Informática para visualizar a página.</p>
+      <form class="access-form" id="accessForm" novalidate>
+        <label for="accessPassword">Senha de acesso</label>
+        <div class="access-field">
+          <input id="accessPassword" name="password" type="password" autocomplete="current-password" required autofocus placeholder="Digite sua senha">
+          <button class="password-toggle" type="button" id="passwordToggle" aria-label="Mostrar senha">Mostrar</button>
+        </div>
+        <p class="access-error" id="accessError" role="alert" aria-live="polite"></p>
+        <button class="access-submit" type="submit">Liberar demonstração <span aria-hidden="true">→</span></button>
+      </form>
+      <small>Ambiente reservado para avaliação do cliente.</small>
+    </div>
+  </section>
+
   <header class="site-header" id="inicio">
     <a class="brand" href="#inicio" aria-label="Arara Beach, início">
       <img class="brand-logo" src="assets/arara-beach-logo.png" alt="Arara Beach">
