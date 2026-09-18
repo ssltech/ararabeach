@@ -145,7 +145,9 @@ h1 em {
 }
 
 .family {
-  background: linear-gradient(145deg, #4c641b, #052941);
+  background:
+    linear-gradient(0deg, rgba(0, 22, 51, .88), rgba(0, 22, 51, .08) 68%),
+    url("momentos-juntos.jpg") center / cover no-repeat;
 }
 
 .quote-band {
