@@ -188,6 +188,20 @@ h1 em {
   box-shadow: 0 30px 70px rgba(0, 0, 0, .3);
 }
 
+.satellite-map {
+  line-height: 0;
+}
+
+.satellite-map::after {
+  display: none;
+}
+
+.satellite-map iframe {
+  width: 100%;
+  height: 500px;
+  border: 0;
+}
+
 .map-lines {
   background: repeating-radial-gradient(ellipse at 35% 60%, transparent 0 36px, rgba(0, 22, 51, .16) 38px 40px);
 }
@@ -260,5 +274,9 @@ footer {
     width: 300px;
     height: 300px;
     right: -120px;
+  }
+
+  .satellite-map iframe {
+    height: 360px;
   }
 }
