@@ -53,18 +53,12 @@ body::after {
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: -22px;
-  background: url("arara-beach-principal.jpg") center / cover no-repeat;
-  filter: blur(18px);
-  opacity: .5;
-  transform: scale(1.04);
+  content: none;
 }
 
 .hero > img {
   position: relative;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 
