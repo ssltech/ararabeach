@@ -48,6 +48,26 @@ body::after {
   background: linear-gradient(180deg, rgba(0, 22, 51, .82), transparent);
 }
 
+.hero {
+  background: var(--brand-navy);
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: -22px;
+  background: url("arara-beach-principal.jpg") center / cover no-repeat;
+  filter: blur(18px);
+  opacity: .5;
+  transform: scale(1.04);
+}
+
+.hero > img {
+  position: relative;
+  object-fit: contain;
+  object-position: center;
+}
+
 .hero-shade {
   background:
     linear-gradient(90deg, rgba(0, 22, 51, .92) 0%, rgba(0, 22, 51, .56) 47%, rgba(0, 22, 51, .12) 75%),
@@ -229,6 +249,11 @@ footer {
     background:
       linear-gradient(90deg, rgba(0, 22, 51, .9), rgba(0, 22, 51, .42)),
       linear-gradient(0deg, rgba(0, 22, 51, .78), transparent);
+  }
+
+  .hero > img {
+    object-fit: cover;
+    object-position: 50% center;
   }
 
   .quote-band::after {
