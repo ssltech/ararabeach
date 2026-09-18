@@ -242,6 +242,26 @@ h1 em {
   color: rgba(255, 255, 255, .74);
 }
 
+.contact-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.button-instagram {
+  color: var(--brand-white);
+  border: 1px solid rgba(255, 255, 255, .58);
+  background: linear-gradient(115deg, rgba(82, 191, 227, .2), rgba(152, 173, 47, .22));
+  backdrop-filter: blur(8px);
+}
+
+.button-instagram:hover {
+  border-color: var(--brand-yellow);
+  background: rgba(255, 255, 255, .12);
+}
+
 footer {
   background: #000f25;
   color: rgba(255, 255, 255, .68);
@@ -278,5 +298,10 @@ footer {
 
   .satellite-map iframe {
     height: 360px;
+  }
+
+  .contact-actions {
+    max-width: 420px;
+    margin-inline: auto;
   }
 }
