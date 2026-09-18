@@ -141,7 +141,9 @@ h1 em {
 }
 
 .water {
-  background: linear-gradient(145deg, #07557b, #001a3c);
+  background:
+    linear-gradient(0deg, rgba(0, 22, 51, .86), rgba(0, 22, 51, .12) 68%),
+    url("banho-natureza-protegida.jpg") center / cover no-repeat;
 }
 
 .food {
