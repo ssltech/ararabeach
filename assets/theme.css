@@ -274,6 +274,34 @@ h1 em {
   background: rgba(255, 255, 255, .12);
 }
 
+.whatsapp-float {
+  position: fixed;
+  z-index: 1000;
+  right: 24px;
+  bottom: 24px;
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #25d366;
+  border: 2px solid rgba(255, 255, 255, .9);
+  box-shadow: 0 10px 28px rgba(0, 0, 0, .32);
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.whatsapp-float:hover {
+  transform: translateY(-3px) scale(1.05);
+  background: #20bd5a;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, .38);
+}
+
+.whatsapp-float:focus-visible {
+  outline: 3px solid var(--brand-yellow);
+  outline-offset: 4px;
+}
+
 footer {
   background: #000f25;
   color: rgba(255, 255, 255, .68);
@@ -315,5 +343,12 @@ footer {
   .contact-actions {
     max-width: 420px;
     margin-inline: auto;
+  }
+
+  .whatsapp-float {
+    right: 16px;
+    bottom: 16px;
+    width: 56px;
+    height: 56px;
   }
 }
