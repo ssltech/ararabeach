@@ -250,6 +250,18 @@ h1 em {
   flex-wrap: wrap;
 }
 
+.contact-actions .button {
+  gap: 10px;
+}
+
+.contact-actions .button > span {
+  margin-left: 4px;
+}
+
+.contact-actions svg {
+  flex: 0 0 auto;
+}
+
 .button-instagram {
   color: var(--brand-white);
   border: 1px solid rgba(255, 255, 255, .58);
