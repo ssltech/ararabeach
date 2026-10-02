@@ -75,3 +75,31 @@ document.querySelector('[data-contact]')?.addEventListener('click',event=>{
     document.querySelector('[data-contact]').nextElementSibling?.scrollIntoView({behavior:'smooth',block:'center'});
   }
 });
+
+const whatsappWidget=document.querySelector('#whatsappWidget');
+const whatsappToggle=document.querySelector('#whatsappToggle');
+const whatsappPanel=document.querySelector('#whatsappPanel');
+
+const setWhatsappPanel=open=>{
+  whatsappWidget?.classList.toggle('is-open',open);
+  whatsappToggle?.setAttribute('aria-expanded',String(open));
+  whatsappToggle?.setAttribute('aria-label',open?'Fechar atendimento pelo WhatsApp':'Abrir atendimento pelo WhatsApp');
+  whatsappPanel?.setAttribute('aria-hidden',String(!open));
+};
+
+whatsappToggle?.addEventListener('click',()=>{
+  setWhatsappPanel(!whatsappWidget.classList.contains('is-open'));
+});
+
+document.addEventListener('click',event=>{
+  if(whatsappWidget?.classList.contains('is-open')&&!whatsappWidget.contains(event.target)){
+    setWhatsappPanel(false);
+  }
+});
+
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape'&&whatsappWidget?.classList.contains('is-open')){
+    setWhatsappPanel(false);
+    whatsappToggle?.focus();
+  }
+});
